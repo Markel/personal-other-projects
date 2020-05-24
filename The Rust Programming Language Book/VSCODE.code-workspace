@@ -5,6 +5,10 @@
 			"path": "1. Getting Started"
 		},
 		{
+			"name": "Programming a Guessing Game",
+			"path": "guessing_game"
+		},
+		{
 			"name": "Common Programming Concepts",
 			"path": "common_programming_concepts"
 		}
