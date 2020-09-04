@@ -11,12 +11,19 @@
 		{
 			"name": "Common Programming Concepts",
 			"path": "common_programming_concepts"
+		},
+		{
+			"name": "Understanding Ownership",
+			"path": "understanding_ownership"
 		}
 	],
 	"extensions": {
 		"recommendations": [
 			"rust-lang.rust",
 			"aaron-bond.better-comments"
+		],
+		"unwantedRecommendations": [
+			"eg2.vscode-npm-script"
 		]
 	},
 	"settings": {
