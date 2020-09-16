@@ -4,4 +4,12 @@
 
 # The Rust Programming Book Ignore
 The Rust Programming Language Book/**/target/
-The Rust Programming Language Book/**/*.rs.bk 
+The Rust Programming Language Book/**/*.rs.bk
+
+# Ada
+Ada/**/default-loc.xml
+Ada/**/*.stderr
+Ada/**/*.stdout
+Ada/**/*.o
+Ada/**/*.ali
+Ada/**/*.adb.*

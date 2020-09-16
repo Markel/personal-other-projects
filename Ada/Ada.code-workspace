@@ -1,0 +1,108 @@
+{
+	"folders": [
+		{
+			"name": "Test for compiler",
+			"path": "Hello_world_test"
+		},
+		{
+			"name": "Operaciones básicas (primera clase)",
+			"path": "Suma_example"
+		},
+		{
+			"name": "Lab00 - Funciones y Procedures",
+			"path": "functions_and_procedures"
+		}
+	],
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "4. Compile",
+				"detail": "Compiles the current file and soft cleans",
+				"type": "shell",
+				"command": "cd ${relativeFileDirname} && gnatmake ${fileBasename} && gnatclean ${fileBasenameNoExtension} -c",
+				"args": [],
+				"presentation": {
+					"reveal": "silent",
+					"clear": true
+				},
+				"problemMatcher": [
+					"$ada"
+				]
+			},
+			{
+				"label": "1. Compile & Execute",
+				"detail": "Compiles and executes the current file",
+				"type": "shell",
+				"command": "",
+				"dependsOrder": "sequence",
+				"dependsOn": [
+					"4. Compile",
+					"2. Execute"
+				],
+				"presentation": {
+					"focus": true,
+					"reveal": "always"
+				},
+				"problemMatcher": [
+					"$ada"
+				],
+				"group": {
+					"kind": "build",
+					"isDefault": true
+				}
+			},
+			{
+				"label": "2. Execute",
+				"detail": "Executes an already compiled file",
+				"type": "shell",
+				"command": "cd ${relativeFileDirname} && ${fileBasenameNoExtension}.exe",
+				"presentation": {
+					"focus": true,
+					"reveal": "always"
+				},
+				"problemMatcher": [
+					"$ada"
+				],
+				"group": {
+					"kind": "test",
+					"isDefault": true
+				}
+			},
+			{
+				"label": "5. Soft clean",
+				"detail": "Deletes compiling files except .exe",
+				"type": "shell",
+				"command": "cd ${relativeFileDirname} && gnatclean ${fileBasenameNoExtension} -c",
+				"presentation": {
+					"reveal": "silent"
+				},
+				"problemMatcher": [
+					"$ada"
+				]
+			},
+			{
+				"label": "3. Full clean",
+				"detail": "Deletes all compiling files",
+				"type": "shell",
+				"command": "cd ${relativeFileDirname} && gnatclean ${fileBasenameNoExtension}",
+				"presentation": {
+					"reveal": "silent"
+				},
+				"problemMatcher": [
+					"$ada"
+				]
+			}
+		]
+	},
+	"extensions": {
+		"recommendations": [
+			"alessandrodelsole.ada",
+			"adacore.ada"
+		]
+	},
+	"settings": {
+		"git.enableCommitSigning": true,
+		"editor.tabSize": 2
+	}
+}

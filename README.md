@@ -5,6 +5,7 @@ There isn't incredible things to look here, it consists of different non-profess
 
 **Table of contents**
 
-| Folder name | Description |
-| ---------------------------------- | ------------------------------------------------------------------------------------------- |
-| The Rust Programming Language Book | Created while reading [The Rust Programming Language Book](https://doc.rust-lang.org/book/) |
+|  | Folder name | Description |  |
+|-|-|-|-|
+| 1 | The Rust Programming Language Book | Created while reading [The Rust Programming Language Book](https://doc.rust-lang.org/book/) |  |
+| 2 | Ada | Projects from the Basic Programming subject in university |  |
