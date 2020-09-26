@@ -1,0 +1,2 @@
+# MEI
+Statistics, yeah!!! Mainly R projects. A VsCode workspace file is provided which will divide everything in folders (although it already is). It may include some tasks too, but don't get your hopes up 🙃

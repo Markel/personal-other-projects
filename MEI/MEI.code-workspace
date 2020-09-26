@@ -1,0 +1,32 @@
+{
+	"folders": [
+		{
+			"name": "Plot images",
+			"path": "C:/Users/Markel/AppData/Local/Temp/Rtmpm0BhjD/vscode-R/images"
+		},
+		{
+			"name": "Detector de números primos",
+			"path": "prime_number"
+		},
+		{
+			"name": "Comandos básicos",
+			"path": "primer_laboratorio"
+		}
+	],
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			// It actually doesn't work
+			{
+				"label": "Borrar plots",
+				"detail": "Borra todas las imágenes antiguas",
+				"type": "shell",
+				"command": "cd C:/Users/Markel/AppData/Local/Temp/Rtmpm0BhjD/vscode-R/images/ && del /q *",
+				"problemMatcher": []
+			}
+		]
+	},
+	"settings": {
+		
+	}
+}
