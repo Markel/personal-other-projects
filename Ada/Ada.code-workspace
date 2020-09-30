@@ -1,18 +1,26 @@
 {
 	"folders": [
-		{
-			"name": "Test for compiler",
-			"path": "Hello_world_test"
-		},
-		{
-			"name": "Operaciones básicas (primera clase)",
-			"path": "Suma_example"
-		},
-		{
-			"name": "Lab00 - Funciones y Procedures",
-			"path": "functions_and_procedures"
-		}
-	],
+    {
+      "name": "Test for compiler",
+      "path": "Hello_world_test"
+    },
+    {
+      "name": "Operaciones básicas (primera clase)",
+      "path": "Suma_example"
+    },
+    {
+      "name": "Lab00 - Funciones y Procedures",
+      "path": "functions_and_procedures"
+    },
+    {
+      "name": "Lab01 - Algoritmos",
+      "path": "laboratorio_algoritmico"
+    },
+    {
+      "name": "Lab02 - Condicionales",
+      "path": "conditionals"
+    }
+  ],
 	"tasks": {
 		"version": "2.0.0",
 		"tasks": [
@@ -103,6 +111,7 @@
 	},
 	"settings": {
 		"git.enableCommitSigning": true,
-		"editor.tabSize": 2
+		"editor.tabSize": 2,
+		"editor.detectIndentation": false
 	}
 }

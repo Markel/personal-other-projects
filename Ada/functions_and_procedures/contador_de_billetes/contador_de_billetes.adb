@@ -63,7 +63,7 @@ BEGIN
     contar_billetes(a_contar => resto, valor_billete => 5, num_billetes => num_billetes_5, extra => resto);
     
     -- Mostrar los resultados
-    -- El put para floats https://www.adaic.org/resources/add_content/docs/craft/html/ch05.htm#5.6
+    -- Documentación del put para floats https://www.adaic.org/resources/add_content/docs/craft/html/ch05.htm#5.6
     Put("500x");
     Ada.Integer_Text_IO.Put(num_billetes_500, 0);
     Put(" + 200x");

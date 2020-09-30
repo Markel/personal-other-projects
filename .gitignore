@@ -13,3 +13,4 @@ Ada/**/*.stdout
 Ada/**/*.o
 Ada/**/*.ali
 Ada/**/*.adb.*
+Ada/**/code.png
