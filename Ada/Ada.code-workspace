@@ -19,6 +19,10 @@
     {
       "name": "Lab02 - Condicionales",
       "path": "conditionals"
+    },
+    {
+      "name": "Lab03 - Packages",
+      "path": "packages"
     }
   ],
 	"tasks": {
