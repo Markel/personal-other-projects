@@ -4,6 +4,8 @@
 .RData
 .Rhistory
 *.zip
+*.log
+*.ffs_db
 
 # The Rust Programming Book Ignore
 The Rust Programming Language Book/**/target/
@@ -17,4 +19,4 @@ Ada/**/*.o
 Ada/**/*.ali
 Ada/**/*.adb.*
 Ada/**/code.png
-Ada/**/*.txt
+Ada/**/Comentarios.txt

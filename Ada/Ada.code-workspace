@@ -23,6 +23,10 @@
     {
       "name": "Lab03 - Packages",
       "path": "packages"
+    },
+    {
+      "name": "Lab04 - Tipo examen",
+      "path": "collage"
     }
   ],
 	"tasks": {
