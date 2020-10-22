@@ -306,7 +306,7 @@ package body Laboratorio04 is
       exit when input = 0 or odiosos_count = 5;
       if input rem 2 /= 0 then
         is_odioso := es_odioso(input);
-        if is_odioso = TRUE then
+        if is_odioso then
           suma_odiosos := suma_odiosos + input;
           odiosos_count := odiosos_count + 1;
         end if;

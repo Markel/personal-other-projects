@@ -27,6 +27,10 @@
     {
       "name": "Lab04 - Tipo examen",
       "path": "collage"
+    },
+    {
+      "name": "Preparación - Examen 1",
+      "path": "prep_examen"
     }
   ],
 	"tasks": {
