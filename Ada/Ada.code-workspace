@@ -31,6 +31,14 @@
     {
       "name": "Preparación - Examen 1",
       "path": "prep_examen"
+    },
+    {
+      "name": "Lab05 - Vectores",
+      "path": "vectores"
+    },
+    {
+      "name": "Clase 2020/11/02",
+      "path": "c201102"
     }
   ],
 	"tasks": {
@@ -52,13 +60,13 @@
 			},
 			{
 				"label": "1. Compile & Execute",
-				"detail": "Compiles and executes the current file",
+				"detail": "Compiles and executes the current file with entrada",
 				"type": "shell",
 				"command": "",
 				"dependsOrder": "sequence",
 				"dependsOn": [
 					"4. Compile",
-					"2. Execute"
+					"6. Execute with entrada"
 				],
 				"presentation": {
 					"focus": true,
@@ -77,6 +85,19 @@
 				"detail": "Executes an already compiled file",
 				"type": "shell",
 				"command": "cd ${relativeFileDirname} && ${fileBasenameNoExtension}.exe",
+				"presentation": {
+					"focus": true,
+					"reveal": "always"
+				},
+				"problemMatcher": [
+					"$ada"
+				]
+      },
+      {
+				"label": "6. Execute with entrada",
+				"detail": "Executes an already compiled file with <entrada.txt",
+				"type": "shell",
+				"command": "cd ${relativeFileDirname} && ${fileBasenameNoExtension}.exe<entrada.txt",
 				"presentation": {
 					"focus": true,
 					"reveal": "always"
