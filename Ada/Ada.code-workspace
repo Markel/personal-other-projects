@@ -48,107 +48,200 @@
 	"tasks": {
 		"version": "2.0.0",
 		"tasks": [
-			{
-				"label": "4. Compile",
-				"detail": "Compiles the current file and soft cleans",
-				"type": "shell",
-				"command": "cd ${relativeFileDirname} && gnatmake ${fileBasename} && gnatclean ${fileBasenameNoExtension} -c",
-				"args": [],
-				"presentation": {
-					"reveal": "silent",
-					"clear": true
-				},
-				"problemMatcher": [
-					"$ada"
-				]
-			},
-			{
-				"label": "1. Compile & Execute",
-				"detail": "Compiles and executes the current file with entrada",
-				"type": "shell",
-				"command": "",
-				"dependsOrder": "sequence",
-				"dependsOn": [
-					"4. Compile",
-					"6. Execute with entrada"
-				],
-				"presentation": {
-					"focus": true,
-					"reveal": "always"
-				},
-				"problemMatcher": [
-					"$ada"
-				],
-				"group": {
-					"kind": "build",
-					"isDefault": true
-				}
-			},
-			{
-				"label": "2. Execute",
-				"detail": "Executes an already compiled file",
-				"type": "shell",
-				"command": "cd ${relativeFileDirname} && ${fileBasenameNoExtension}.exe",
-				"presentation": {
-					"focus": true,
-					"reveal": "always"
-				},
-				"problemMatcher": [
-					"$ada"
-				]
+      {
+        "label": "1. Compilar & Ejecutar",
+        "detail": "Compila y ejecuta el archivo actual",
+        "type": "shell",
+        "command": "",
+        "dependsOrder": "sequence",
+        "dependsOn": [
+          "4. Compilar",
+          "2. Ejecutar"
+        ],
+        "presentation": {
+          "focus": true,
+          "reveal": "always"
+        },
+        "problemMatcher": [
+          "$ada"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
       },
       {
-				"label": "6. Execute with entrada",
-				"detail": "Executes an already compiled file with <entrada.txt",
-				"type": "shell",
-				"command": "cd ${relativeFileDirname} && ${fileBasenameNoExtension}.exe<entrada.txt",
-				"presentation": {
-					"focus": true,
-					"reveal": "always"
-				},
-				"problemMatcher": [
-					"$ada"
-				],
-				"group": {
-					"kind": "test",
-					"isDefault": true
-				}
-			},
-			{
-				"label": "5. Soft clean",
-				"detail": "Deletes compiling files except .exe",
-				"type": "shell",
-				"command": "cd ${relativeFileDirname} && gnatclean ${fileBasenameNoExtension} -c",
-				"presentation": {
-					"reveal": "silent"
-				},
-				"problemMatcher": [
-					"$ada"
-				]
-			},
-			{
-				"label": "3. Full clean",
-				"detail": "Deletes all compiling files",
-				"type": "shell",
-				"command": "cd ${relativeFileDirname} && gnatclean ${fileBasenameNoExtension}",
-				"presentation": {
-					"reveal": "silent"
-				},
-				"problemMatcher": [
-					"$ada"
-				]
-			}
-		]
+        "label": "2. Ejecutar",
+        "detail": "Ejecuta el programa compilado anteriormente",
+        "type": "shell",
+        "windows": {
+          "command": "cd ${fileDirname} && IF EXIST \"entrada.txt\" (${fileBasenameNoExtension}.exe<entrada.txt) ELSE (${fileBasenameNoExtension}.exe)",
+        },
+        "command": "cd ${fileDirname} && ./${fileBasenameNoExtension}",
+        "presentation": {
+          "focus": true,
+          "reveal": "always"
+        },
+        "problemMatcher": [
+          "$ada"
+        ],
+        "group": {
+          "kind": "test",
+          "isDefault": true
+        }
+      },
+      {
+        "label": "3. Limpieza",
+        "detail": "Elimina todos los archivos generados por GNAT",
+        // Esto no debería ser necesario normalmente, ya que se aplican sistemas de limpieza de normal
+        "type": "shell",
+        "command": "cd ${fileDirname} && gnatclean ${fileBasenameNoExtension}",
+        "presentation": {
+          "reveal": "silent"
+        },
+        "problemMatcher": [
+          "$ada"
+        ]
+      },
+      {
+        "label": "4. Compilar",
+        "detail": "Compila el archivo actual",
+        "type": "shell",
+        "command": "cd ${fileDirname} && gnatmake ${fileBasename} -gnatW8 && gnatclean ${fileBasenameNoExtension} -c",
+        "args": [],
+        "presentation": {
+          "clear": true,
+          "reveal": "silent"
+        },
+        "problemMatcher": [
+          "$ada"
+        ]
+      },
+      {
+        "label": "5. Compilar para depuración",
+        "detail": "Compila de manera que se pueda debuggear después",
+        "type": "shell",
+        "command": "cd ${fileDirname} && gnatmake ${fileBasename} -g -gnatW8 && gnatclean ${fileBasenameNoExtension} -c",
+        "args": [],
+        "presentation": {
+          "clear": true
+        },
+        "problemMatcher": [
+          "$ada"
+        ]
+      }
+    ]
 	},
 	"extensions": {
 		"recommendations": [
 			"alessandrodelsole.ada",
-			"adacore.ada"
-		]
+      "adacore.ada",
+      "ms-vscode.cpptools", // Para debugging
+      "ms-ceintl.vscode-language-pack-es", // Imagino que a la gente le gustará el Spanish
+      // A partir de aquí, es totalmente mis recomendaciones
+      "aaron-bond.better-comments",
+      "coenraads.bracket-pair-colorizer-2",
+      "oderwat.indent-rainbow",
+      "vscode-icons-team.vscode-icons",
+      "connor4312.codesong"
+    ]
 	},
 	"settings": {
+    "workbench.colorTheme": "Codesong",
 		"git.enableCommitSigning": true,
 		"editor.tabSize": 2,
-		"editor.detectIndentation": false
-	}
+    "editor.detectIndentation": false,
+    "editor.maxTokenizationLineLength": 5000,
+    "debug.allowBreakpointsEverywhere": true,
+    "better-comments.tags": [
+      {
+        "tag": "!",
+        "color": "#FF2D00",
+        "strikethrough": false,
+        "underline": false,
+        "backgroundColor": "transparent",
+        "bold": false,
+        "italic": false
+      },
+      {
+        "tag": "?",
+        "color": "#3498DB",
+        "strikethrough": false,
+        "underline": false,
+        "backgroundColor": "transparent",
+        "bold": false,
+        "italic": false
+      },
+      {
+        "tag": "//",
+        "color": "#474747",
+        "strikethrough": true,
+        "underline": false,
+        "backgroundColor": "transparent",
+        "bold": false,
+        "italic": false
+      },
+      {
+        "tag": "todo",
+        "color": "#FF8C00",
+        "strikethrough": false,
+        "underline": false,
+        "backgroundColor": "transparent",
+        "bold": false,
+        "italic": false
+      },
+      {
+        "tag": "*",
+        "color": "#c3c279",
+        "strikethrough": false,
+        "underline": false,
+        "backgroundColor": "transparent",
+        "bold": false,
+        "italic": false
+      }
+    ],
+    "ada.defaultCharset": "utf-8",
+    "ada.displayMethodAncestryOnNavigation": "always",
+    "files.associations": {
+      "*.adb": "ada",
+      "*.ads": "ada"
+    }
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "GDB",
+        "type": "cppdbg",
+        "windows": {
+          //"MIMode": "gdb",
+          //"miDebuggerPath": "C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/gdb.exe",
+          "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+        },
+        "osx": {
+          "MIMode": "lldb" // Si hace algo bien, si no pues se queda como pista
+        },
+        "MIMode": "gdb",
+        //"miDebuggerPath": "/usr/bin/gdb",
+        "program": "${fileDirname}/${fileBasenameNoExtension}",
+        "request": "launch",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${fileDirname}",
+        "environment": [],
+        "externalConsole": false,
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          }
+        ],
+        "presentation": {
+          "focus": false
+        },
+        "preLaunchTask": "5. Compilar para depuración"
+      }
+    ]
+  }
 }
