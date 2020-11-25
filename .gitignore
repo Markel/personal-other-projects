@@ -3,7 +3,6 @@
 *.pdb
 .RData
 .Rhistory
-*.zip
 *.log
 *.ffs_db
 
