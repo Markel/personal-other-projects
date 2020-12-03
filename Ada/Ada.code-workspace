@@ -43,6 +43,18 @@
     {
       "name": "Lab06 - Vectores y registros",
       "path": "vectoresadvanced"
+    },
+    {
+      "name": "Lab07 - Matrices y listas estáticas",
+      "path": "matrices"
+    },
+    {
+      "name": "Preparación - Examen 2",
+      "path": "prep_examen_2"
+    },
+    {
+      "name": "Clase 2020/12/03",
+      "path": "c201203"
     }
   ],
 	"tasks": {
