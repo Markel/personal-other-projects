@@ -1,0 +1,3 @@
+[submodule "Ada/ada-en-vscode"]
+	path = Ada/ada-en-vscode
+	url = https://github.com/Markel/ada-en-vscode

@@ -49,6 +49,10 @@
       "path": "matrices"
     },
     {
+      "name": "Ada en VSCode",
+      "path": "ada-en-vscode"
+    },
+    {
       "name": "Preparación - Examen 2",
       "path": "prep_examen_2"
     },
