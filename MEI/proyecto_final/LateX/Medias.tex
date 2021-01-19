@@ -1,0 +1,70 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = es_ES
+% !TeX command = xelatex -shell-escape "Medias".tex
+
+%%% Paper style %%%
+\documentclass[12pt,a4paper,spanish]{article}
+% \documentclass[12pt,twoside,a4paper,spanish]{article} % Two sided
+
+%%% Margins %%%
+%\usepackage[left=1in, right=1in, top=1in, bottom=1in]{geometry} % Word
+\usepackage[left=.75in, right=.75in, top=1in, bottom=1in]{geometry} % Small
+
+%%% Packages %%%
+%\usepackage{fontspec} % Importar fuentes (recordar usar XeLaTeX)
+
+\usepackage{microtype} % Improved justification http://www.khirevich.com/latex/microtype/
+\usepackage[dvipsnames]{xcolor} % Color
+\usepackage{graphicx, wrapfig} % Imágenes
+\usepackage{subcaption} % Varias imágenes https://www.overleaf.com/learn/latex/Positioning_images_and_tables#Multiple_images_in_one_figure
+
+\usepackage[spanish]{babel} % language
+%\usepackage[utf8]{inputenc} % unicoide (usar si se usa pdflatex)
+%\usepackage{csquotes} % TODO: Investigar para qué sirve
+
+\usepackage{listings} % Importing code
+\usepackage[cache=false]{minted} % Mejor coloreo de código, pero necesita librerías de Python https://github.com/gpoore/minted, el cache se debe a esto https://github.com/gpoore/minted/issues/81#issuecomment-126726829
+
+%%% Bibliografía %%%
+%\usepackage[style=numeric]{biblatex} % Citations
+%\addbibresource{bibliografía.bib}
+
+%%% Título %%%
+\title{\textbf{Búsqueda de la media a través de muestras}}
+\date{Diciembre 2020}
+\author{Markel Ferro}
+
+%%% Metadata %%%
+\usepackage[xetex,
+			unicode = true,
+			pdfusetitle,
+			pdfsubject={Métodos Estadísticos de la Ingeniería},
+			pdfkeywords={Hipótesis; media; estadística},
+			pdfcreator={XeLaTeX}]{hyperref}
+
+%%% Links %%%
+\hypersetup{
+	allbordercolors = white,
+	colorlinks = true,
+	linkcolor  = black, % Default red (estos son los links de índice)
+	anchorcolor = black, % Default black 
+	citecolor = black, % Default green
+	filecolor = MidnightBlue, % Default cyan
+	menucolor = black, % Default red
+	runcolor = black, % Default cyan
+	urlcolor = MidnightBlue, % Default magenta
+}
+
+%%% Documento %%%
+\begin{document}
+	\maketitle
+	%\tableofcontents % Puede que necesite dos compilaciones para funcionar
+	
+	% Importar contenidos %
+	\input{Texto}
+	\input{Ejemplo}
+	
+	% Bibliografía %
+	%\nocite{*} % Imprimir referencias aunque no se hayan citado
+	%\printbibliography
+\end{document}
