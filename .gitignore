@@ -1,21 +1,5 @@
 # General exceptions
 *.exe
 *.pdb
-.RData
-.Rhistory
 *.log
 *.ffs_db
-
-# The Rust Programming Book Ignore
-The Rust Programming Language Book/**/target/
-The Rust Programming Language Book/**/*.rs.bk
-
-# Ada
-Ada/**/default-loc.xml
-Ada/**/*.stderr
-Ada/**/*.stdout
-Ada/**/*.o
-Ada/**/*.ali
-Ada/**/*.adb.*
-Ada/**/code.png
-Ada/**/Comentarios.*

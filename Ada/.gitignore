@@ -1,0 +1,8 @@
+**/default-loc.xml
+**/*.stderr
+**/*.stdout
+**/*.o
+**/*.ali
+**/*.adb.*
+**/code.png
+**/Comentarios.*
