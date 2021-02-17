@@ -2,8 +2,7 @@ package mailsystem;
 
 /**
  * Email is an electronic message send by someone and received by another
- * person.</br>
- * Created on 2021-02-10.
+ * person.
  * 
  * @author Markel
  */
@@ -68,23 +67,37 @@ public class Email {
 	 * 
 	 * @param otherReceiver Receiver to check against the email one
 	 * @return true if they are equal, false if they are different
+	 * @deprecated The equals() with string superseeds this method
 	 */
 	public boolean equalReceiver(String otherReceiver) {
 		return otherReceiver == this.receiver;
 	}
 	
 	/**
+	 * Checks whether the receiver of the email is the same as passed in parameters
+	 * 
+	 * @param otherReceiver Receiver to check against the email one
+	 * @return true if they are equal, false if they are different
+	 */
+	public boolean equals(String otherReceiver) {
+		return this.receiver.equals(otherReceiver);
+	}
+	
+	/**
 	 * Checks whether two emails are exactly equal in all parameters
 	 * 
-	 * @param secondEmail the email to compare to
+	 * @param o the email to compare to
 	 * @return true if they are equal, false if they are even a comma different
 	 * @implNote all parameters: sender, receiver, subject & text
 	 */
-	public boolean equals(Email secondEmail) {
-		return (this.receiver == secondEmail.getReceiver() &&
-				this.sender == secondEmail.getSender() &&
-				this.subject == secondEmail.getSubject() &&
-				this.text == secondEmail.getText());
+	@Override
+	public boolean equals(Object o) {
+		if (o==null) return false; // Si el objeto es null entonces falso
+		Email secondEmail = (Email) o; // Convertir el objeto a la clase Email
+		return (this.receiver.equals(secondEmail.getReceiver()) &&
+				this.sender.equals(secondEmail.getSender()) &&
+				this.subject.equals(secondEmail.getSubject()) &&
+				this.text.equals(secondEmail.getText()));
 	}
 	
 	/**
