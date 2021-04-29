@@ -10,3 +10,4 @@ There aren't incredible things to look here, it consists of different non-profes
 | 1 | The Rust Programming Language Book | Created while reading [The Rust Programming Language Book](https://doc.rust-lang.org/book/) |
 | 2 | Ada | Projects from the Basic Programming subject in university |
 | 3 | MEI | Projects from the Statistics Methods applied to Engineering subject in uni |
+| 4 | PMOO | Projects from the Object Oriented Modular Programming subject in uni |
